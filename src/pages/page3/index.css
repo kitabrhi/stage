@@ -1,0 +1,111 @@
+.app {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('../../../public/images/couverture.png');
+    background-size: 150%; /* Zoom de l'image à 150% */
+    background-position: center; /* Centre l'image dans le conteneur */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    width: 100%; /* Assure que le fond d'écran couvre toute la largeur */
+    height: 100%; /* Assure que le fond d'écran couvre toute la hauteur */
+}
+
+.center-bottom {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 650px; /* Ajustez la hauteur selon vos besoins */
+}
+
+.center-bottom img {
+    max-width: 700px;
+    height: auto;
+    position: absolute;
+    bottom: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.equipment-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.equipment-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #003366;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    transform-origin: center bottom;
+}
+
+/* Animation d'oscillation */
+/* Animation de bouge simple */
+/* Animation d'oscillation subtile */
+/* Animation de léger mouvement */
+/* Animation de léger mouvement */
+/* Animation de léger mouvement */
+/*@keyframes subtleMove {*/
+/*    100%, 100% {*/
+/*        transform: translate(0, 0);*/
+/*    }*/
+/*    50% {*/
+/*        transform: translate(5px, 0); !* Déplacement horizontal de 5px *!*/
+/*    }*/
+/*}*/
+
+/*!* Appliquer l'animation à chaque image *!*/
+/*.img1, .img2, .img3, .img4, .img5, .img6 {*/
+/*    animation: subtleMove 2s ease-in-out infinite;*/
+/*}*/
+
+/* Variations de l'animation pour chaque image */
+.img1 {
+    animation-delay: 0s;
+    max-width: 200px; /* Largeur maximale souhaitée pour img1 */
+    height: 150px; /* Garde le ratio hauteur/largeur */
+    transform: rotate(30deg) translateX(-100px) translateY(70px) rotate(-30deg);
+}
+.img2 {
+    animation-delay: 0.5s;
+    width: 200px;
+    height: 150px; /* Garde le ratio hauteur/largeur */
+    transform: rotate(-130deg) translateX(250px) translateY(-30px) rotate(130deg);
+}
+.img3 {
+    animation-delay: 1s;
+    width: 200px;
+    height: 150px; /* Garde le ratio hauteur/largeur */
+    transform: rotate(-110deg) translateX(250px) translateY(20px) rotate(110deg);
+}
+.img4 {
+    animation-delay: 1.5s;
+    max-width: 200px; /* Largeur maximale souhaitée pour img4 */
+    height: 150px; /* Garde le ratio hauteur/largeur */
+    transform: rotate(-80deg) translateX(250px) translateY(30px) rotate(80deg);
+}
+.img5 {
+    animation-delay: 2s;
+    max-width: 200px; /* Largeur maximale souhaitée pour img5 */
+    height: 150px; /* Garde le ratio hauteur/largeur */
+    transform: rotate(-60deg) translateX(200px) translateY(30px) rotate(60deg);
+}
+.img6 {
+    animation-delay: 2.5s;
+    max-width: 200px; /* Largeur maximale souhaitée pour img6 */
+    height: 150px; /* Garde le ratio hauteur/largeur */
+    transform: rotate(-10deg) translateX(140px) translateY(60px) rotate(10deg);
+}

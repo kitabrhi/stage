@@ -1,0 +1,24 @@
+/* Styles généraux */
+.dashboard {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr; /* Trois lignes : navbar, charts-grid, contenu flexible */
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-image: url('/public/images/couverture.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.chart {
+    width: 1920px;
+    height: 1080px;
+    top: -2725px;
+    left: -1156px;
+    gap: 0px;
+    opacity: 0;
+}

@@ -1,0 +1,243 @@
+/* Styles généraux */
+.dashboard {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url('/public/images/couverture.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 300px;
+    height: 50px;
+}
+
+.charts-grid {
+    display: grid;
+    gap: 20px;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "div1 div2 div2 div3"
+        "div4 div5 div6 div7"
+        "div9 div9 div8 div7"
+        "div11 div11 div12 div12";
+}
+
+.charts-grid > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Assignation des zones de grille */
+.div1 { grid-area: div1; }
+.div2 { grid-area: div2; }
+.div3 { grid-area: div3; }
+.div4 { grid-area: div4; }
+.div5 { grid-area: div5; }
+.div6 { grid-area: div6; }
+.div7 { grid-area: div7; }
+.div8 { grid-area: div8; }
+.div9 { grid-area: div9; }
+.div10 { grid-area: div10; }
+.div11 { grid-area: div11; }
+.div12 { grid-area: div12; }
+
+.chart {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 100%; /* Assurez-vous que les charts prennent toute la largeur de leur conteneur */
+}
+
+/* Bordure "cornered" blanche */
+.box-e {
+    --clr-border: white;
+    background-image:
+            linear-gradient(0deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%), /* left */
+            linear-gradient(90deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%), /* top */
+            linear-gradient(180deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%), /* right */
+            linear-gradient(270deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%); /* bottom */
+    background-size: 2px calc(100% + 4px), calc(100% + 4px) 2px, 2px calc(100% + 4px), calc(100% + 4px) 2px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    max-width: 100%;
+    gap: 19px;
+    border-radius: 25px 0px 0px 0px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.table h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table table th, .table table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.table table th {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-weight: bold;
+}
+
+.table table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 1600px) {
+    .charts-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "div1 div2 div3"
+            "div4 div5 div7"
+            "div9 div6 div7"
+            "div11 div8 div12";
+    }
+}
+
+@media (max-width: 1200px) {
+    .charts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+                "div1"
+            "div2"
+            "div3"
+            "div4"
+            "div5"
+            "div6"
+            "div7"
+            "div7"
+            "div8"
+            "div9"
+            "div10"
+            "div11"
+            "div12";
+    }
+}
+
+@media (max-width: 992px) {
+    .charts-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+            "div1"
+            "div2"
+            "div3"
+            "div4"
+            "div5"
+            "div6"
+            "div7"
+            "div7"
+            "div8"
+            "div9"
+            "div10"
+            "div11"
+            "div12";
+    }
+}
+
+@media (max-width: 768px) {
+    .charts-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+            "div1"
+            "div2"
+            "div3"
+            "div4"
+            "div5"
+            "div6"
+            "div7"
+            "div7"
+            "div8"
+            "div9"
+            "div10"
+            "div11"
+            "div12";
+    }
+}
+
+@media (max-width: 576px) {
+    .charts-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+            "div1"
+            "div2"
+            "div3"
+            "div4"
+            "div5"
+            "div6"
+            "div7"
+            "div7"
+            "div8"
+            "div9"
+            "div10"
+            "div11"
+            "div12";
+    }
+}
+
+@media (max-width: 480px) {
+    .charts-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+            "div1"
+            "div2"
+            "div3"
+            "div4"
+            "div5"
+            "div6"
+            "div7"
+            "div7"
+            "div8"
+            "div9"
+            "div10"
+            "div11"
+            "div12";
+    }
+}

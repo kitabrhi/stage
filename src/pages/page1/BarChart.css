@@ -1,0 +1,9 @@
+.bar-chart-container {
+    width: 612px;
+    height: 312px;
+    top: 68px;
+    left: 654px;
+    gap: 19px;
+    border-radius: 24px 0px 0px 0px;
+    border: 2px solid transparent; /* Ajustez si nécessaire */
+}

@@ -1,0 +1,73 @@
+/* src/components/AvailabilityDashboard.css */
+
+.availability-dashboard {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(10, 116, 218, 0); /* Fond semi-transparent avec une teinte légère */
+    border-radius: 15px; /* Coins légèrement plus arrondis */
+    padding: 25px; /* Légèrement plus de padding pour plus d'espace */
+    max-width: 1000px; /* Ajustez selon votre mise en page */
+    margin: 20px auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0); /* Ombre subtile pour un effet de profondeur */
+}
+
+.availability-dashboard .content {
+    display: flex;
+    width: 100%;
+}
+
+.availability-dashboard .dashboard-container {
+    flex: 2;
+    margin-right: 25px; /* Espacement légèrement augmenté entre le dashboard et le tableau */
+}
+
+.availability-dashboard .table-container {
+    flex: 1; /* Ajustez la taille du tableau par rapport au dashboard */
+}
+
+.availability-dashboard .header {
+    font-size: 1.8em; /* Taille de police légèrement augmentée pour plus de visibilité */
+    text-align: center;
+    margin-bottom: 25px; /* Espacement plus généreux en bas */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff; /* Couleur de texte blanche pour un meilleur contraste */
+}
+
+.availability-dashboard .header .truck-icon {
+    width: 25px; /* Taille d'icône légèrement augmentée */
+    height: auto; /* Pour maintenir le ratio de l'icône */
+    margin-right: 10px; /* Espacement entre l'icône et le texte */
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0); /* Fond semi-transparent pour la table */
+    border-radius: 10px; /* Coins arrondis pour la table */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0); /* Ombre subtile pour la table */
+    overflow: hidden;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ffffff;
+}
+
+.table th {
+    background-color: rgba(10, 116, 218, 0.8); /* Fond semi-transparent pour les en-têtes */
+    color: #fff; /* Texte blanc pour un meilleur contraste */
+    font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: rgba(10, 116, 218, 0); /* Lignes alternées pour une meilleure lisibilité */
+}
+
+.table tbody tr:hover {
+    background-color: rgba(10, 116, 218, 0); /* Fond légèrement plus foncé au survol */
+}

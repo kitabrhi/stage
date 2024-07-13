@@ -1,0 +1,147 @@
+/* Styles généraux */
+.dashboard222 {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url('/public/images/couverture.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 300px;
+    height: 50px;
+}
+
+.charts-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr); /* Quatre colonnes par défaut */
+    grid-auto-rows: minmax(200px, auto); /* Définir une hauteur minimale pour les rangées */
+    width: 100%;
+}
+
+.charts-grid > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Assignation des zones de grille */
+.div111 { grid-area: 1 / 1 / 2 / 2; }
+.div44 { grid-area: 2 / 1 / 2 / 1; }
+.div77 { grid-area: 1 / 4 / 4 / 4; }
+.div88 { grid-area: 3 / 3 / 3 / 3; }
+.div22 { grid-area: 1 / 2 / 2 / 4; }
+
+/* Full width table styles */
+.table-container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.full-width-table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+
+.full-width-table th, .full-width-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.full-width-table th {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-weight: bold;
+}
+
+.full-width-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Bordure "cornered" blanche */
+.box-e {
+    --clr-border: white;
+    background-image:
+            linear-gradient(0deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%), /* left */
+            linear-gradient(90deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%), /* top */
+            linear-gradient(180deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%), /* right */
+            linear-gradient(270deg, var(--clr-border), var(--clr-border) 25%, transparent 25%, transparent 75%, var(--clr-border) 75%); /* bottom */
+    background-size: 2px calc(100% + 4px), calc(100% + 4px) 2px, 2px calc(100% + 4px), calc(100% + 4px) 2px;
+    background-position: 0 0, 0 0, 100% 0, 0 100%;
+    background-repeat: no-repeat;
+}
+
+/* Responsive design */
+@media (max-width: 1600px) {
+    .charts-grid {
+        grid-template-columns: repeat(3, 1fr); /* Trois colonnes pour les écrans xx-large */
+    }
+    .div111 { grid-area: 1 / 1 / 2 / 3; }
+    .div44 { grid-area: 1 / 3 / 2 / 4; }
+    .div77 { grid-area: 2 / 3 / 4 / 4; }
+    .div88 { grid-area: 3 / 3 / 3 / 3; }
+    .div22 { grid-area: 2 / 1 / 3 / 3; }
+}
+
+@media (max-width: 1200px) {
+    .charts-grid {
+        grid-template-columns: repeat(2, 1fr); /* Deux colonnes pour les écrans x-large */
+    }
+    .div111 { grid-area: 1 / 1 / 2 / 3; }
+    .div44 { grid-area: 2 / 1 / 3 / 3; }
+    .div77 { grid-area: 2 / 2 / 5 / 3; }
+    .div88 { grid-area: 3 / 3 / 3 / 3; }
+    .div22 { grid-area: 4 / 1 / 5 / 2; }
+}
+
+@media (max-width: 992px) {
+    .charts-grid {
+        grid-template-columns: 1fr; /* Une colonne pour les écrans large et inférieurs */
+    }
+    .div111, .div44, .div77, .div88, .div22 {
+        grid-area: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .charts-grid {
+        grid-template-columns: 1fr; /* Une colonne pour les écrans medium et inférieurs */
+    }
+    .div111, .div44, .div77, .div88, .div22 {
+        grid-area: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .charts-grid {
+        grid-template-columns: 1fr; /* Une colonne pour les écrans small et inférieurs */
+    }
+    .div111, .div44, .div77, .div88, .div22 {
+        grid-area: auto;
+    }
+}
