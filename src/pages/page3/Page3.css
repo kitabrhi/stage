@@ -1,3 +1,4 @@
+/* src/pages/Page3.css */
 .app {
     position: relative;
     min-height: 100vh;
@@ -37,9 +38,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.equipment-card {
+.equipment-item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,64 +51,91 @@
     background-color: #003366;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    transform-origin: center bottom;
 }
 
-/* Animation d'oscillation */
-/* Animation de bouge simple */
-/* Animation d'oscillation subtile */
-/* Animation de léger mouvement */
-/* Animation de léger mouvement */
-/* Animation de léger mouvement */
-/*@keyframes subtleMove {*/
-/*    100%, 100% {*/
-/*        transform: translate(0, 0);*/
-/*    }*/
-/*    50% {*/
-/*        transform: translate(5px, 0); !* Déplacement horizontal de 5px *!*/
-/*    }*/
-/*}*/
-
-/*!* Appliquer l'animation à chaque image *!*/
-/*.img1, .img2, .img3, .img4, .img5, .img6 {*/
-/*    animation: subtleMove 2s ease-in-out infinite;*/
-/*}*/
-
-/* Variations de l'animation pour chaque image */
-.img1 {
-    animation-delay: 0s;
-    max-width: 200px; /* Largeur maximale souhaitée pour img1 */
+.equipment-item img {
+    max-width: 200px;
     height: 150px; /* Garde le ratio hauteur/largeur */
+}
+
+.equipment-label {
+    color: white;
+    margin-top: 10px;
+}
+
+/* Styles spécifiques pour chaque image */
+.img1 {
     transform: rotate(30deg) translateX(-100px) translateY(70px) rotate(-30deg);
 }
 .img2 {
-    animation-delay: 0.5s;
-    width: 200px;
-    height: 150px; /* Garde le ratio hauteur/largeur */
     transform: rotate(-130deg) translateX(250px) translateY(-30px) rotate(130deg);
 }
 .img3 {
-    animation-delay: 1s;
-    width: 200px;
-    height: 150px; /* Garde le ratio hauteur/largeur */
     transform: rotate(-110deg) translateX(250px) translateY(20px) rotate(110deg);
 }
 .img4 {
-    animation-delay: 1.5s;
-    max-width: 200px; /* Largeur maximale souhaitée pour img4 */
-    height: 150px; /* Garde le ratio hauteur/largeur */
     transform: rotate(-80deg) translateX(250px) translateY(30px) rotate(80deg);
 }
 .img5 {
-    animation-delay: 2s;
-    max-width: 200px; /* Largeur maximale souhaitée pour img5 */
-    height: 150px; /* Garde le ratio hauteur/largeur */
     transform: rotate(-60deg) translateX(200px) translateY(30px) rotate(60deg);
 }
 .img6 {
-    animation-delay: 2.5s;
-    max-width: 200px; /* Largeur maximale souhaitée pour img6 */
-    height: 150px; /* Garde le ratio hauteur/largeur */
     transform: rotate(-10deg) translateX(140px) translateY(60px) rotate(10deg);
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 1200px) {
+    .center-bottom {
+        height: 500px;
+    }
+    .center-bottom img {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 992px) {
+    .center-bottom {
+        height: 400px;
+    }
+    .center-bottom img {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .center-bottom {
+        height: 300px;
+    }
+    .center-bottom img {
+        max-width: 300px;
+    }
+    .equipment-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .center-bottom {
+        height: 250px;
+    }
+    .center-bottom img {
+        max-width: 250px;
+    }
+    .equipment-item img {
+        max-width: 150px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .center-bottom {
+        height: 200px;
+    }
+    .center-bottom img {
+        max-width: 200px;
+    }
+    .equipment-item img {
+        max-width: 100px;
+        height: auto;
+    }
 }
