@@ -1,83 +1,95 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ApexCharts from 'apexcharts';
 
 const ApexChart = () => {
-
-    useEffect(() => {
-        // Options du graphique
+    React.useEffect(() => {
+        // Configuration du graphique
         const options = {
             series: [{
-                name: 'Net Profit',
-                data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
-                color: '#00E396' // Couleur pour la série 'Net Profit'
+                name: 'Series 1',
+                data: [31, 40, 28, 51, 42, 109, 100],
+                color: '#FF4560' // Couleur pour la série 'Series 1'
             }, {
-                name: 'Revenue',
-                data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
-                color: '#FEB019' // Couleur pour la série 'Revenue'
-            }, {
-                name: 'Free Cash Flow',
-                data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
-                color: '#FF4560' // Couleur pour la série 'Free Cash Flow'
+                name: 'Series 2',
+                data: [11, 32, 45, 32, 34, 52, 41],
+                color: '#00E396' // Couleur pour la série 'Series 2'
             }],
             chart: {
-                type: 'bar',
                 height: 350,
+                type: 'area',
+                zoom: {
+                    enabled: true // Activer le zoom
+                },
                 toolbar: {
-                    show: false // Masquer la barre d'outils si nécessaire
+                    show: true, // Afficher la barre d'outils
+                    tools: {
+                        zoom: true,
+                        zoomin: true,
+                        zoomout: true,
+                        reset: true
+                    }
                 }
             },
-            plotOptions: {
-                bar: {
-                    horizontal: false,
-                    columnWidth: '55%',
-                    endingShape: 'rounded'
-                },
-            },
             dataLabels: {
-                enabled: false
+                enabled: false // Désactiver les étiquettes de données
             },
             stroke: {
-                show: true,
-                width: 2,
-                colors: ['transparent']
+                curve: 'smooth', // Courbe lisse pour les lignes
+                width: 2 // Largeur de la ligne
             },
             xaxis: {
-                categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+                type: 'datetime',
+                categories: [
+                    "2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z",
+                    "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z",
+                    "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z",
+                    "2018-09-19T06:30:00.000Z"
+                ],
                 labels: {
+                    format: 'dd MMM HH:mm', // Format des étiquettes
                     style: {
-                        colors: '#ffffff' // Couleur des étiquettes de l'axe X en blanc
+                        colors: '#6c757d', // Couleur des étiquettes
+                        fontSize: '12px' // Taille de la police
                     }
                 }
             },
             yaxis: {
                 title: {
-                    text: '$ (thousands)',
+                    text: 'Value', // Titre de l'axe Y
                     style: {
-                        color: '#ffffff' // Couleur du titre de l'axe Y en blanc
+                        color: '#6c757d' // Couleur du titre
                     }
                 },
                 labels: {
                     style: {
-                        colors: '#ffffff' // Couleur des étiquettes de l'axe Y en blanc
+                        colors: '#6c757d' // Couleur des étiquettes de l'axe Y
                     }
                 }
             },
             fill: {
-                colors: ['#00E396', '#FEB019', '#FF4560'] // Utilisation de couleurs vives pour les séries
+                type: 'gradient',
+                gradient: {
+                    shade: 'light',
+                    type: 'vertical',
+                    shadeIntensity: 0.5,
+                    gradientToColors: ['#00E396', '#FF4560'], // Dégradé de couleurs
+                    inverseColors: false,
+                    opacityFrom: 0.5,
+                    opacityTo: 0.1,
+                    stops: [0, 100] // Positions de dégradé
+                }
             },
             tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm' // Format de l'info-bulle
+                },
                 y: {
-                    formatter: function (val) {
-                        return "$ " + val + " thousands"
-                    },
-                    style: {
-                        color: '#ffffff' // Couleur du texte du tooltip en blanc
-                    }
+                    formatter: (val) => `${val}` // Formater les valeurs des tooltips
                 }
             }
         };
 
-        // Création et rendu du graphique
+        // Création et affichage du graphique
         const chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
 
@@ -87,15 +99,10 @@ const ApexChart = () => {
         };
     }, []);
 
-    // Styles pour le conteneur du graphique
+    // Styles du conteneur du graphique
     const containerStyle = {
-        width: '612px',
-        height: '312px',
-        top: '68px',
-        left: '654px',
-        gap: '19px',
-        borderRadius: '24px 0px 0px 0px',
-        border: '2px solid transparent', // Ajuster si nécessaire
+        width: '100%',
+        height: '350px'
     };
 
     return <div id="chart" style={containerStyle}></div>;

@@ -1,7 +1,6 @@
+// src/pages/Page3.js
 import React from 'react';
-import './index.css';  // Supposons que ce fichier contient vos styles CSS
-import EquipmentCard from '../../components/EquipmentCard';  // Importer vos composants personnalisés
-import Map from '../../components/Map';  // Importer vos composants personnalisés
+import './Page3.css';  // Supposons que ce fichier contient vos styles CSS
 
 // Données d'exemple pour les cartes d'équipement
 const equipmentData = [
@@ -15,15 +14,14 @@ const equipmentData = [
 
 const Page3 = () => {
     return (
-        <div className="app">
-            <Map /> {/* Supposons que Map est pour afficher une carte */}
-            <div className="equipment-container">
+        <div className="app" role="main">
+            <div className="grid-container" role="grid">
                 {equipmentData.map((item, index) => (
-                    <div key={index} className="equipment-item">
+                    <div key={index} className="grid-item" role="gridcell">
                         <img
                             src={process.env.PUBLIC_URL + '/' + item.image}
                             alt={item.label}
-                            title={item.title}  // Ajouter le titre ici
+                            title={item.title}
                             className={item.className}
                         />
                         <div className="equipment-label">{item.label}</div>
