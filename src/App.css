@@ -1,0 +1,65 @@
+/* App.css */
+
+/* Styles globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app-container {
+    text-align: center;
+    width: 100%;
+}
+
+/* Conteneur de boutons */
+.navigation-buttons {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Styles des boutons */
+.nav-btn {
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.nav-btn:active {
+    transform: translateY(0);
+}
+
+.nav-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Styles des pages */
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 20px;
+}
